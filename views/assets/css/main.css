@@ -1,0 +1,300 @@
+/*Menu 1*/
+ul { list-style: none; }
+a { text-decoration: none; color: black;}
+body {
+   background: #666;
+}
+#menu-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+
+#menu-wrapper #hamburger-menu {
+    position: relative;
+    width: 25px;
+    height: 20px;
+    margin: 15px;
+}
+
+#menu-wrapper #hamburger-menu span {
+    opacity: 1;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: .4s ease-in-out;
+}
+
+#menu-wrapper #hamburger-menu span:nth-child(1) {
+    top: 0;
+}
+#menu-wrapper #hamburger-menu span:nth-child(2) {
+    top: 9px;
+}
+#menu-wrapper #hamburger-menu span:nth-child(3) {
+    top: 18px;
+}
+#menu-wrapper #hamburger-menu.open span:nth-child(1) {
+    transform: translateY(9px) rotate(135deg);
+}
+#menu-wrapper #hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-60px);
+}
+#menu-wrapper #hamburger-menu.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-135deg);
+}
+
+#menu-container .menu-list .menu-submenu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#menu-container .menu-list {
+    padding-left: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    box-shadow: rgba(100,100,100,0.2) 6px 2px 10px;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: -100%;
+}
+
+#menu-container .menu-list li.accordion-toggle, #menu-container .menu-list .menu-login {
+    font-size: 16px;
+    padding: 20px;
+    text-transform: uppercase;
+    border-top: 1px solid #dbdcd2;
+}
+#menu-container .menu-list li:first-of-type {
+    border-top: 0;
+}
+
+.accordion-toggle, .accordion-content {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+  .accordion-content {
+    display: none;
+}
+
+.accordion-toggle a:before, .accordion-toggle a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: #5a5858;
+    transform-origin: 50% 50%;
+    transition: all 0.3s ease-out;
+}
+
+.accordion-toggle a:before {
+    transform: rotate(-90deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+.accordion-toggle.active-tab {
+  background: yellowgreen;
+  transition: all 0.3s ease;
+}
+.accordion-toggle a.active:before {
+    transform: rotate(0deg);
+    background: #fff !important;
+}
+
+.accordion-toggle a.active:after {
+    transform: rotate(180deg);
+    background: #fff !important;
+    opacity: 0;
+}
+/*Menu 1*/
+
+/*Menu 2*/
+.nav_mobile_menu {
+  height: 100vh;
+  width: 100%;
+  background: #343a40;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.menu-expanded {
+  background: #212529;
+  max-width: 0px;
+  opacity: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease 0s;
+  overflow: hidden;
+}
+
+.menu-expanded ul {
+  margin: 0;
+  list-style: none;
+  font-size: 32px;
+  text-align: right;
+  line-height: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.hamburguer-menu {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  position: absolute;
+}
+
+.line {
+  display: block;
+  width: 30px;
+  background: #fff;
+  height: 2px;
+  margin: 5px 5px;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+input {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.change .first-line {
+  transform: rotate(45deg) translate(0px, 0px);
+}
+
+.change .second-line {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+.change .third-line{
+  display:none;
+}
+
+.change ~ .menu-expanded {
+  max-width: 400px;
+  opacity: 1;
+}
+
+@media (max-width: 400px) {
+  .menu-expanded {
+    width: 100%;
+  }
+}
+/*Menu 2*/
+
+/*Menu 3*/
+.menu_mobile {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background: #262626;
+  width: 250px;
+  height: 100%;
+  transition: .3s;
+}
+.active {
+  left: 0;
+}
+ul {
+  margin: 0;
+  paddin: 20px 0;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  padding: 10px 20px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+.menuBtn {
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+}
+.menuBtn span {
+  display: block;
+  width: 35px;
+  height: 3px;
+  background: #262626;
+  position: absolute;
+  top: 24px;
+  transition: .3s;
+}
+.menuBtn span:before {
+  content:"";
+  width: 100%;
+  height: 3px;
+  background: #262626;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  transition: .3s;
+}
+.menuBtn span:after {
+  content:"";
+  width: 100%;
+  height: 3px;
+  background: #262626;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  transition: .3s;
+}
+.menuBtn.toggle span {
+  background: transparent;
+}
+.menuBtn.toggle span:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.menuBtn.toggle span:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/*Menu 3*/
+
+/*Menu 4*/
+
+/*Menu 4*/
